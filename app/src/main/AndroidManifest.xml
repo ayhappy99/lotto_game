@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lotto_game">
         <activity
+            android:name=".lucky_num"
+            android:exported="false" />
+        <activity
             android:name=".random"
             android:exported="false" />
         <activity
