@@ -3,12 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< Updated upstream
         <entry key="..\:/game/app/src/main/res/layout/activity_card.xml" value="0.136" />
         <entry key="..\:/game/app/src/main/res/layout/activity_game_select.xml" value="0.264" />
         <entry key="..\:/game/app/src/main/res/layout/activity_lucky_num.xml" value="0.109375" />
         <entry key="..\:/game/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/game/app/src/main/res/layout/activity_random.xml" value="0.109375" />
         <entry key="..\:/game/app/src/main/res/layout/activity_roulette.xml" value="0.109375" />
+=======
+        <entry key="..\:/Project_Android/lotto_game/app/src/main/res/layout/activity_card.xml" value="0.109375" />
+        <entry key="..\:/Project_Android/lotto_game/app/src/main/res/layout/activity_game_select.xml" value="0.2" />
+        <entry key="..\:/Project_Android/lotto_game/app/src/main/res/layout/activity_lucky_num.xml" value="0.24365942028985507" />
+        <entry key="..\:/Project_Android/lotto_game/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Project_Android/lotto_game/app/src/main/res/layout/activity_random.xml" value="0.1" />
+        <entry key="..\:/Project_Android/lotto_game/app/src/main/res/layout/activity_roulette.xml" value="0.109375" />
+>>>>>>> Stashed changes
         <entry key="app/src/main/res/layout/activity_card.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/activity_game_select.xml" value="0.14499969482421876" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2682291666666667" />
