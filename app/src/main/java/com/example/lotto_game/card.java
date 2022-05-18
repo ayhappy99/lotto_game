@@ -19,6 +19,7 @@ public class card extends AppCompatActivity implements View.OnClickListener {
     private ArrayList<Integer> imageList;
     private ArrayList<MemoryCard> cards;
 
+
     private Collections collections;
     private Button resetBtn;
 
@@ -29,6 +30,7 @@ public class card extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card);
+
 
         init();
 
@@ -115,98 +117,143 @@ public class card extends AppCompatActivity implements View.OnClickListener {
 
         int id = view.getId();
         
-        int position=0;
+        int position = 0;
 
         if(id==R.id.imageBtn0){
             position=0;
+
         }else if(id==R.id.imageBtn1){
             position=1;
+
         }else if(id==R.id.imageBtn2){
             position=2;
-        }else if(id==R.id.imageBtn3){
-            position=3;
+
+        }else if(id==R.id.imageBtn3) {
+            position = 3;
         }else if(id==R.id.imageBtn4){
             position=4;
+
         }else if(id==R.id.imageBtn5){
             position=5;
+
         }else if(id==R.id.imageBtn6){
             position=6;
+
         }else if(id==R.id.imageBtn7){
             position=7;
+
         }else if(id==R.id.imageBtn8){
             position=8;
+
         }else if(id==R.id.imageBtn9){
             position=9;
+
         }else if(id==R.id.imageBtn10){
             position=10;
+
         }else if(id==R.id.imageBtn11){
             position=11;
+
         }else if(id==R.id.imageBtn12){
             position=12;
+
         }else if(id==R.id.imageBtn13){
             position=13;
+
         }else if(id==R.id.imageBtn14){
             position=14;
+
         }else if(id==R.id.imageBtn15){
             position=15;
+
         }else if(id==R.id.imageBtn16){
             position=16;
+
         }else if(id==R.id.imageBtn17){
             position=17;
+
         }else if(id==R.id.imageBtn18){
             position=18;
+
         }else if(id==R.id.imageBtn19){
             position=19;
+
         }else if(id==R.id.imageBtn20){
             position=20;
+
         }else if(id==R.id.imageBtn21){
             position=21;
+
         }else if(id==R.id.imageBtn22){
             position=22;
+
+
         }else if(id==R.id.imageBtn23){
             position=23;
+
         }else if(id==R.id.imageBtn24){
             position=24;
+
         }else if(id==R.id.imageBtn25){
             position=25;
+
         }else if(id==R.id.imageBtn26){
             position=26;
+
         }else if(id==R.id.imageBtn27){
             position=27;
+
         }else if(id==R.id.imageBtn28){
             position=28;
+
         }else if(id==R.id.imageBtn29){
             position=29;
+
         }else if(id==R.id.imageBtn30){
             position=30;
+
         }else if(id==R.id.imageBtn31){
             position=31;
+
         }else if(id==R.id.imageBtn32){
             position=32;
+
         }else if(id==R.id.imageBtn33){
             position=33;
+
         }else if(id==R.id.imageBtn34){
             position=34;
+
         }else if(id==R.id.imageBtn35){
             position=35;
+
         }else if(id==R.id.imageBtn36){
             position=36;
+
         }else if(id==R.id.imageBtn37){
             position=37;
+
         }else if(id==R.id.imageBtn38){
             position=38;
+
         }else if(id==R.id.imageBtn39){
             position=39;
+
         }else if(id==R.id.imageBtn40){
             position=40;
+
         }else if(id==R.id.imageBtn41){
             position=41;
+
         }else if(id==R.id.imageBtn42){
             position=42;
+
         }else if(id==R.id.imageBtn43){
             position=43;
+
         }else if(id==R.id.imageBtn44){
             position=44;
+
         }
 
         updateModel(position);
