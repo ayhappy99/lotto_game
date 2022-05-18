@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lotto_game">
         <activity
+            android:name=".main_num"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-7742126992195898~8662773016" />
+
+        <activity
             android:name=".lucky_num"
             android:exported="false" />
         <activity

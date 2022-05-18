@@ -1,11 +1,11 @@
 package com.example.lotto_game;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     Button go_game;
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         lucky_num.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,lucky_num.class);
+                Intent intent = new Intent(MainActivity.this,main_num.class);
                 startActivity(intent);
             }
         });
