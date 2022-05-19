@@ -2,6 +2,8 @@ package com.example.lotto_game;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -10,26 +12,58 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bluehomestudio.luckywheel.LuckyWheel;
 import com.bluehomestudio.luckywheel.OnLuckyWheelReachTheTarget;
 import com.bluehomestudio.luckywheel.WheelItem;
 
+import org.w3c.dom.UserDataHandler;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 public class roulette extends AppCompatActivity {
     private LuckyWheel luckyWheel;
     List<WheelItem> wheelItems;
     String point;
+    TextView textView;
+
+    private UserDatabaseHelper userDataBaseHelper;
+    public static final String TABLE_NAME = "user";
+    SQLiteDatabase database;
+
+    Button look,delete;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_roulette);
+
+        userDataBaseHelper = UserDatabaseHelper.getInstance(this);
+        database = userDataBaseHelper.getWritableDatabase();
+
+        textView = findViewById(R.id.textView);
+        look=findViewById(R.id.look);
+        look.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectData(TABLE_NAME);
+            }
+        });
+        delete=findViewById(R.id.delete);
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String money = textView.getText().toString();
+                deleteData(money);
+            }
+        });
 
         luckyWheel = findViewById(R.id.luck_wheel);
 
@@ -44,19 +78,69 @@ public class roulette extends AppCompatActivity {
 
                 Toast.makeText(roulette.this,money,Toast.LENGTH_SHORT).show();
 
+
+
             }
         });
         Button start = findViewById(R.id.spin_btn);
+
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 Random random = new Random();
                 point = String.valueOf(random.nextInt(45)+1);
                 luckyWheel.rotateWheelTo(Integer.parseInt(point));
+
+                WheelItem wheelItem = wheelItems.get(Integer.parseInt(point)-1);
+
+                String money = wheelItem.text;
+
+                insertData(money);
+
             }
         });
 
 
+    }
+    private void selectData(String tableName){
+
+        if (database !=null){
+            String sql = " SELECT money FROM " + tableName;
+            Cursor cursor = database.rawQuery(sql,null);
+
+            for(int i=0;i<cursor.getCount();i++){
+                cursor.moveToNext();
+                String money = cursor.getString(0);
+                println("[ "+i+ "] Number : "+money);
+            }
+            cursor.close();
+        }
+    }
+    private void insertData(String money){
+        if (database!=null){
+            String sql = "INSERT INTO user(money) VALUES(?) ";
+            Object[] params={money};
+            database.execSQL(sql,params);
+        }
+    }
+    private void deleteData(String money){
+        if (database!=null){
+            String sql="DELETE FROM user WHERE money=? ";
+            Object[] params={money};
+            database.execSQL(sql,params);
+            database.execSQL("delete from "+TABLE_NAME);
+        }
+    }
+
+    private void println(String data){
+        textView.append(data+"\n");
+    }
+    @Override
+    protected void onDestroy(){
+        userDataBaseHelper.close();
+        super.onDestroy();
     }
 
     private void generateWheelItems() {

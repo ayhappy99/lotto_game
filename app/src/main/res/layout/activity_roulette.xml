@@ -19,11 +19,42 @@
         android:layout_height="wrap_content"
         android:id="@+id/spin_btn"
         android:layout_below="@+id/luck_wheel"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:layout_marginTop="10dp"
         android:text="시작"
         android:textSize="25sp"
         />
+    <Button
+        android:fontFamily="@font/cookierunregular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/look"
+        android:layout_below="@+id/luck_wheel"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:text="조회"
+        android:textSize="25sp"
+        />
+    <Button
+        android:fontFamily="@font/cookierunregular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/delete"
+        android:layout_below="@+id/luck_wheel"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="삭제"
+        android:textSize="25sp"
+        />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_centerHorizontal="true"/>
 
 
 
